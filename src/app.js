@@ -1,8 +1,10 @@
 const express = require('express');
 const projectRoutes = require('./routes/projectRoutes');
+const cors = require('cors'); // Import the cors package
 const app = express();
 require('dotenv').config();
 
+app.use(cors()); // Use the cors middleware
 app.use(express.json());
 app.use('/api/projects', projectRoutes);
 
